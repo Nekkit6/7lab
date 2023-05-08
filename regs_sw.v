@@ -7,8 +7,8 @@ module regs_sw(
     input BTNU, BTNL, BTNC, BTNR, BTND,
     output reg [31:0] out
     );
-  `define addr_sw  12'h000 //адрес значений переключателей
-  `define addr_btn 12'h004 //адрес значений кнопок
+  `define addr_sw  12'h000 //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёР№ РїРµСЂРµРєР»СЋС‡Р°С‚РµР»РµР№
+  `define addr_btn 12'h004 //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёР№ РєРЅРѕРїРѕРє
   
   always @(posedge CLK100) begin
     if(!resetn) 

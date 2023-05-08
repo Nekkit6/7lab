@@ -8,19 +8,19 @@ module regs_semseg(
     output [7:0] AN
   );
   
-  `define addr_seg0 12'h000 //адрес значения 0сег
-  `define addr_seg1 12'h004 //адрес значения 1сег
-  `define addr_seg2 12'h008 //адрес значения 2сег
-  `define addr_seg3 12'h00C //адрес значения 3сег
-  `define addr_seg4 12'h010 //адрес значения 4сег
-  `define addr_seg5 12'h014 //адрес значения 5сег
-  `define addr_seg6 12'h018 //адрес значения 6сег
-  `define addr_seg7 12'h01C //адрес значения 7сег
-  `define addr_sel  12'h020 //адрес активации семсег
-  `define addr_strb 12'h024 //адрес режима выбора
-  `define addr_res  12'h028 //адрес сброса
-  `define delay_seg 10**8   //задержка мигания
-  `define pwm       1000    //шим сегментов
+  `define addr_seg0 12'h000 //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёСЏ 0СЃРµРі
+  `define addr_seg1 12'h004 //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёСЏ 1СЃРµРі
+  `define addr_seg2 12'h008 //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёСЏ 2СЃРµРі
+  `define addr_seg3 12'h00C //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёСЏ 3СЃРµРі
+  `define addr_seg4 12'h010 //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёСЏ 4СЃРµРі
+  `define addr_seg5 12'h014 //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёСЏ 5СЃРµРі
+  `define addr_seg6 12'h018 //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёСЏ 6СЃРµРі
+  `define addr_seg7 12'h01C //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёСЏ 7СЃРµРі
+  `define addr_sel  12'h020 //Р°РґСЂРµСЃ Р°РєС‚РёРІР°С†РёРё СЃРµРјСЃРµРі
+  `define addr_strb 12'h024 //Р°РґСЂРµСЃ СЂРµР¶РёРјР° РІС‹Р±РѕСЂР°
+  `define addr_res  12'h028 //Р°РґСЂРµСЃ СЃР±СЂРѕСЃР°
+  `define delay_seg 10**8   //Р·Р°РґРµСЂР¶РєР° РјРёРіР°РЅРёСЏ
+  `define pwm       1000    //С€РёРј СЃРµРіРјРµРЅС‚РѕРІ
   
   reg [9:0] counter;
   reg [7:0] semseg;
@@ -89,9 +89,9 @@ module regs_semseg(
           end
           `addr_strb: begin
             if(we_i) 
-              if (&wdata_i[7:0]) //если пришло FF
-                strb_sel <= 'b0; //режим не используется
-              else if (&(~wdata_i[7:4])) //если 0х0?
+              if (&wdata_i[7:0]) //РµСЃР»Рё РїСЂРёС€Р»Рѕ FF
+                strb_sel <= 'b0; //СЂРµР¶РёРј РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ
+              else if (&(~wdata_i[7:4])) //РµСЃР»Рё 0С…0?
                   strb_sel <= 8'b1 << wdata_i[3:0];
             out <= 'b0 | strb_sel;
           end

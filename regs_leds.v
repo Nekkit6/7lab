@@ -6,9 +6,9 @@ module regs_leds(
     output reg [31:0] out,
     output [15:0] LED
   );
-  `define addr_led       12'h800 //адрес значений светодиодов
-  `define addr_strb_led  12'hf00 //адрес мигания  светодиодов
-  `define delay_LED      10**8   //задержка мигания
+  `define addr_led       12'h800 //Р°РґСЂРµСЃ Р·РЅР°С‡РµРЅРёР№ СЃРІРµС‚РѕРґРёРѕРґРѕРІ
+  `define addr_strb_led  12'hf00 //Р°РґСЂРµСЃ РјРёРіР°РЅРёСЏ  СЃРІРµС‚РѕРґРёРѕРґРѕРІ
+  `define delay_LED      10**8   //Р·Р°РґРµСЂР¶РєР° РјРёРіР°РЅРёСЏ
 
   reg        clk_strb;
   reg [31:0] strb_buf;
